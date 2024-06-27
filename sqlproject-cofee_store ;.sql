@@ -353,7 +353,18 @@ AND phone_number is NULL;
 -- whose last name contains the pattern 'ar' .
 
 --   -- -- -- -- -- --    (answers)    --   --- --- -- -- -- 
+use coffee_store;
+select  * from products;
+-- 1
+select  * from products where coffee_origin= 'indonesia' order by name;
+-- 2
+select * from orders;
+select * from orders where month(order_time)=2 and  year(order_time)=2023
+and customer_id in(19,20,21,24);
 
+-- 3 
+select * from customers;
+select first_name , phone_number from customers where last_name like '%ar%' ;
 -- ---------------------------(questions series 3) ----------------------------------------- --
 -- 1. From the customers table select all the distinct last name 
 -- and order them alphabatically (from A-Z)
@@ -412,7 +423,7 @@ AND o.order_time BETWEEN '2023-01-01' AND '2023-01-31 23:59:59.999999';
 
 
 
--- -------------------------(create entity Relationship diagrams in Workbench) ---------------------------------------
+-- -------------------------(good ending)---------------------------------------
 
 
 
